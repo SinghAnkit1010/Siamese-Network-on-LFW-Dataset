@@ -14,7 +14,7 @@ The LFW dataset, which contains 2,200 images, was used for training the face sim
 
 **Model Architecture:**
 
-The face similarity model employs a Siamese network architecture. It consists of two identical convolutional layers followed by dense layers. On top of these layers, a distance layer is stacked, which computes the distance between the two input faces. The sigmoid activation function is used to project the distances between 0 and 1.
+The face similarity model employs a Siamese network architecture. It consists of two identical convolutional layers followed by dense layers. On top of these layers, a distance layer is stacked, which computes the distance between the two input faces. The sigmoid activation function is used to project the distances between 0 and 1. 
 
 
 **Loss Function:**
@@ -23,4 +23,16 @@ Several loss functions were experimented with, including contrastive loss and cr
 
 **Model Evaluation:**
 
-The performance of the model was evaluated using the recall metric. Since the focus is on minimizing false negatives (different faces predicted as the same), recall was chosen as it provides a measure of false negatives. The model achieved a recall of 65% on the training dataset and 70% on the validation dataset.
+During prediction we kept threshhold value of 0.4 that is if distance between two faces are less than 0.4 they belong to same class otherwise from different class.
+The performance of the model was evaluated using the recall metric. Since the focus is on minimizing false negatives (different faces predicted as the same), recall was chosen as it provides a measure of false negatives. The model achieved a recall of 60% on the training dataset and 65% on the validation dataset. Furthermore model was evaluated on test data on LFW dataset and we got following results:
+
+|        | precision | recall | f1-score | support |
+|--------|-----------|--------|----------|---------|
+| Same faces      |   0.71    |  0.33  |    0.45    |    500   |
+| Different faces  |   0.56    |  0.86  |    0.68    |    500   |
+|--------|-----------|--------|----------|---------|
+| accuracy           |           |        |    0.60    |   1000 |
+| macro avg      |   0.64    |  0.60  |    0.57    |   1000 |
+| weighted avg  |   0.64    |  0.60  |    0.57    |   1000 |
+
+In the context of face similarity, where "Different faces" represents pairs of faces from different individuals, a recall of 0.86 suggests that the model has a relatively high ability to correctly identify different faces, minimizing the occurrence of false negatives.
