@@ -16,10 +16,10 @@ The LFW dataset, which contains 2,200 images, was used for training the face sim
 
 The face similarity model employs a Siamese network architecture. It consists of two identical convolutional layers followed by dense layers. On top of these layers, a distance layer is stacked, which computes the distance between the two input faces. The sigmoid activation function is used to project the distances between 0 and 1. 
 
+**Model Training:**
 
-**Loss Function:**
+During the model training process, we used the RMSProp optimizer, a popular optimization algorithm, to update the neural network weights. The model was trained for 100 epochs.To improve the model's generalization and robustness, we applied data augmentation techniques,like random rotation,random flip etc. to avoid overfitting. Several loss functions were experimented with, including contrastive loss and cross entropy. The binary cross entropy loss function yielded better results for this particular task. It measures the dissimilarity between the predicted similarity and the ground truth labels.The accuracy curve for training and validation is dataset is given below:
 
-Several loss functions were experimented with, including contrastive loss and cross entropy. The binary cross entropy loss function yielded better results for this particular task. It measures the dissimilarity between the predicted similarity and the ground truth labels.
 
 **Model Evaluation:**
 
