@@ -18,7 +18,11 @@ The face similarity model employs a Siamese network architecture. It consists of
 
 **Model Training:**
 
-During the model training process, we used the RMSProp optimizer, a popular optimization algorithm, to update the neural network weights. The model was trained for 100 epochs.To improve the model's generalization and robustness, we applied data augmentation techniques,like random rotation,random flip etc. to avoid overfitting. Several loss functions were experimented with, including contrastive loss and cross entropy. The binary cross entropy loss function yielded better results for this particular task. It measures the dissimilarity between the predicted similarity and the ground truth labels.The accuracy curve for training and validation is dataset is given below:
+During the model training process, we used the RMSProp optimizer, a popular optimization algorithm, to update the neural network weights. The model was trained for 100 epochs.To improve the model's generalization and robustness, we applied data augmentation techniques,like random rotation,random flip etc. to avoid overfitting. Several loss functions were experimented with, including contrastive loss and cross entropy. The binary cross entropy loss function yielded better results for this particular task. It measures the dissimilarity between the predicted similarity and the ground truth labels.The accuracy and curve for validation is dataset is given below:
+
+![download (2)](https://github.com/SinghAnkit1010/Siamese-Network-on-LFW-Dataset/assets/103994994/d2c4a6c7-2033-4000-99c6-612c1becc908)
+
+![download (3)](https://github.com/SinghAnkit1010/Siamese-Network-on-LFW-Dataset/assets/103994994/70a40940-59f7-4ee2-8585-391ddc772eb1)
 
 
 **Model Evaluation:**
